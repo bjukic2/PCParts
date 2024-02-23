@@ -9,11 +9,17 @@ export const metadata: Metadata = {
   description: "Prodaja i kupovina",
 };
 
+const pages: Record<string, `/${string}`> = {
+  home: "/",
+  login: "/login",
+  profil: "/profil",
+};
+
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
