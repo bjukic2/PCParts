@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState, FC } from "react";
+import Logo from "./Logo";
 
 interface NavbarProps{
     pages: Record<string, `/${string}`>;
@@ -21,23 +22,26 @@ const Navbar: FC<NavbarProps> = ({ pages }) => {
     }
 
     return(
-        <nav className="flex items-center justify-center p-4">
-            <ul className="flex gap-2">
-                {Object.entries(pages).map(([name, path]) => (
-                    <li key = {name}>
-                        <Link href={path}>
-                            <span className={clsx(baseClass, {
-                                "bg-gray-600 text-gray-100 pointer-events-none":
-                                path.split('?')[0] === pathName.split('?')[0],
-                            })}
-                            >
-                                {name}
-                            </span>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </nav>
+        <section className="container flex items-center justify-between mx-auto">
+            <Logo />
+            <nav className="flex items-center justify-center p-4">
+                <ul className="flex gap-2">
+                    {Object.entries(pages).map(([name, path]) => (
+                        <li key = {name}>
+                            <Link href={path}>
+                                <span className={clsx(baseClass, {
+                                    "bg-gray-600 text-gray-100 pointer-events-none":
+                                    path.split('?')[0] === pathName.split('?')[0],
+                                })}
+                                >
+                                    {name}
+                                </span>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+        </section>
     );
 }
 
