@@ -1,9 +1,9 @@
 "use client";
-import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState, FC } from "react";
 import Logo from "./Logo";
+import { cn } from "../lib/utils";
 
 interface NavbarProps{
     pages: Record<string, `/${string}`>;
@@ -29,7 +29,7 @@ const Navbar: FC<NavbarProps> = ({ pages }) => {
                     {Object.entries(pages).map(([name, path]) => (
                         <li key = {name}>
                             <Link href={path}>
-                                <span className={clsx(baseClass, {
+                                <span className={cn(baseClass, {
                                     "bg-gray-600 text-gray-100 pointer-events-none":
                                     path.split('?')[0] === pathName.split('?')[0],
                                 })}

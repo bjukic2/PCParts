@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import clsx from "clsx";
+import { cn } from "../../lib/utils";
 
 export const Metadata = {
     title: "Market",
@@ -90,7 +90,7 @@ export default async function Market({
                                 pathname: "/market",
                                 query: { _page: page > 1 ? page - 1 : 1, _limit: pageSize },
                             }}
-                            className={clsx(
+                            className={cn(
                                 "rounded border bg-gray-100 px-3 py-1 text-gray-800",
                                 page === 1 && "pointer-events-none opacity-50"
                             )}
@@ -102,7 +102,7 @@ export default async function Market({
                                 pathname: "/market",
                                 query: { _page: page + 1, _limit: pageSize },
                             }}
-                            className={clsx(
+                            className={cn(
                                 "rounded border bg-gray-100 px-3 py-1 text-gray-800",
                                 page === totalPages && "pointer-events-none opacity-50"
                             )}
