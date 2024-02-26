@@ -58,6 +58,17 @@ export default async function Market({
     return(
         <main className="flex flex-col items-center min-h-screen max-w-5xl m-auto p-10">
             <h1 className="text-3xl font-bold p-10">Marketplace</h1>
+            <ul className="flex flex-col gap-8 p-8">
+                {proizvodi.map((proizvod) => (
+                    <li key={proizvod.id}>
+                        <Link href={`market/${proizvod.id}`}>
+                            <span className="text-2xl">
+                            Proizvod #{proizvod.id}: {proizvod.title}
+                            </span>
+                        </Link>
+                    </li>
+                ))}
+            </ul>
 
             {_limit && _page &&(
                 <div className="flex items-baseline gap-8 pb-10">
@@ -110,17 +121,6 @@ export default async function Market({
                     </div>
                 </div>
             )}
-            <ul className="flex flex-col gap-8">
-                {proizvodi.map((proizvod) => (
-                    <li key={proizvod.id}>
-                        <Link href={`market/${proizvod.id}`}>
-                            <span className="text-2xl">
-                            Proizvod #{proizvod.id}: {proizvod.title}
-                            </span>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
         </main>
     );
 }

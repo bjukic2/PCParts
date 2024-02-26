@@ -30,10 +30,10 @@ export const metadata: Metadata = {
 };
 
 const pages: Record<string, `/${string}`> = {
-  home: "/",
-  login: "/login",
-  profil: "/profil",
-  market: "/market",
+  Home: "/",
+  Login: "/login",
+  Profil: "/profil",
+  Market: "/market?_page=1&_limit=10",
 };
 
 export default function RootLayout({
@@ -49,7 +49,7 @@ export default function RootLayout({
         playfairDisplay.variable,
       )}
       >
-        <Navbar />
+        <Navbar pages={pages}/>
         {children}
         <Footer />
       </body>
