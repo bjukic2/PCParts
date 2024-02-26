@@ -11,7 +11,7 @@ export default function Navbar(){
 
     return(
         <nav className="">
-            
+            This is Navbar
         </nav>
     );
 }
