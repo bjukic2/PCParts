@@ -29,6 +29,8 @@ export const metadata: Metadata = {
   description: "Prodaja i kupovina",
 };
 
+const market = "market?_page=1&_limit=10";
+
 const pages: Record<string, `/${string}`> = {
   Home: "/",
   Login: "/login",
