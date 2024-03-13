@@ -1,5 +1,9 @@
+import HeroSection from "./_components/HeroSection";
+
 export default function Home() {
   return (
-    <div className="flex items-center justify-center h-screen">Pc parts</div>
+    <div className="flex items-center justify-center h-screen">
+      <HeroSection />
+    </div>
   );
 }

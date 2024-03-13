@@ -41,6 +41,8 @@ const Navbar: FC<NavbarProps> = ({ pages }) => {
                     ))}
                 </ul>
             </nav>
+            <nav className="flex items-center justify-center p-4">
+            </nav>
         </section>
     );
 }
